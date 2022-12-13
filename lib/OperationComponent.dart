@@ -57,7 +57,7 @@ class OperationComponentState extends State<OperationComponent> {
               child: Text(
                 result() ,
                 textAlign: TextAlign.center,style: TextStyle(
-                fontWeight: FontWeight.w400
+                fontWeight: FontWeight.w500
               ),
               ),
             ),
