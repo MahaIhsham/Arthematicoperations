@@ -83,7 +83,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     margin: EdgeInsets.only(left: 10, top: 5),
                     child:
                     Text("${_count}", style: TextStyle(
-                        fontSize: 30, fontWeight: FontWeight.w500),),),
+                        fontSize: 18, fontWeight: FontWeight.w500),),),
                   SizedBox(
                     width: 55,
                   ),
