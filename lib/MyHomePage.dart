@@ -1,41 +1,21 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:incrementproject/OperationComponent.dart';
 
 import 'package:responsive_sizer/responsive_sizer.dart';
+
 class MyHomePage extends StatefulWidget {
   const MyHomePage({Key? key, required this.title}) : super(key: key);
 
   final String title;
-
 
   @override
   State<MyHomePage> createState() => _MyHomePageState();
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-
- String multi(){
-    int a = -5, b = _count ;
-
- String  result =(a*b).toString();
-    return result;
-  }
- String sub(){
-   int a = 4, b = _count ;
-
-   String  result2 =(a-b).toString();
-   return result2;
- }
-
-String divide() {
-  int a = 6,
-      b = _count;
-  String result1 = (a / b).toString();
-  return result1;
-}
-
  int _count = 0;
+
   void _incrementCount(){
     setState((){
       _count++;
@@ -48,177 +28,28 @@ String divide() {
       _count--;
     });
   }
+
   @override
   Widget build(BuildContext context) {
     return ResponsiveSizer(
         builder: (context, orientation, screenType)
     {
-      return Scaffold(
-        resizeToAvoidBottomInset: false,
-        appBar: AppBar(
-          title: Text(widget.title),
-        ),
-        
+      return
+           Scaffold(
+          resizeToAvoidBottomInset: false,
+
         body: Center(
-
           child: Column(
-
             children: <Widget>[
+
+              SizedBox(height: 30.0,),
+              OperationComponent(firstValue: -5,secondValue: _count,operation: "*",),
+              SizedBox(height: 30.0,),
+              OperationComponent(firstValue: 4,secondValue:_count,operation: "-",),
+              SizedBox(height: 30.0,),
+              OperationComponent(firstValue: 6,secondValue:_count,operation: "/",),
+              SizedBox(height: 30.0,),
               Container(
-                margin: EdgeInsets.all(20),
-                height:   Adaptive.h(11),
-                width:80.w,
-                decoration: BoxDecoration(
-                  border: Border.all(width: 2, color: Colors.black),
-
-                ),
-                child:
-                Column(
-                  children: [
-
-                    SizedBox(height: Adaptive.h(2),),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-
-                        Container(
-                          child: Text("-5"),
-                        ),
-                        SizedBox(width: 1.w,),
-                        Container(
-                          child: Text("*"),
-                        ),
-                        SizedBox(width: 1.w,),
-                        Container(
-                          child: Text('${_count}'),
-                        )
-                      ],
-                    ),
-
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.end,
-                      children:[
-                    Container(
-
-                      height: Adaptive.h(5),
-                      width: 30.w,
-                      alignment: Alignment.center,
-
-                      decoration: BoxDecoration(
-                        border: Border.all(width: 2, color: Colors.purple),
-                        borderRadius: BorderRadius.all(Radius.circular(10)),
-                      ),
-                      child: Text(multi(),style: TextStyle(fontSize: 18,fontWeight: FontWeight.w400)),
-                    )
-]),
-                  ],
-                ),
-              ),
-              Container(
-                margin: EdgeInsets.all(20),
-                height:   Adaptive.h(11),
-                width:80.w,
-                decoration: BoxDecoration(
-                  border: Border.all(width: 2, color: Colors.black),
-
-                ),
-                child:
-                Column(
-                  children: [
-
-                    SizedBox(height: Adaptive.h(2),),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-
-                        Container(
-                          child: Text("4",),
-                        ),
-                        SizedBox(width: 1.w,),
-                        Container(
-                          child: Text("-"),
-                        ),
-                        SizedBox(width: 1.w,),
-                        Container(
-                          child: Text('${_count}'),
-                        )
-                      ],
-                    ),
-
-                    Row(
-                        mainAxisAlignment: MainAxisAlignment.end,
-                        children:[
-                          Container(
-
-                            height: Adaptive.h(5),
-                            width: 30.w,
-                            alignment: Alignment.center,
-
-                            decoration: BoxDecoration(
-                              border: Border.all(width: 2, color: Colors.purple),
-                              borderRadius: BorderRadius.all(Radius.circular(10)),
-                            ),
-                            child: Text(sub(),style: TextStyle(fontSize: 18,fontWeight: FontWeight.w400)),
-                          )
-                        ]),
-                  ],
-                ),
-              ),
-              Container(
-                margin: EdgeInsets.all(20),
-                height:   Adaptive.h(11),
-                width:80.w,
-                decoration: BoxDecoration(
-                  border: Border.all(width: 2, color: Colors.black),
-
-                ),
-                child:
-                Column(
-                  children: [
-
-                    SizedBox(height: Adaptive.h(2),),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-
-                        Container(
-                          child: Text("6"),
-                        ),
-                        SizedBox(width: 1.w,),
-                        Container(
-                          child: Text("/"),
-                        ),
-                        SizedBox(width: 1.w,),
-                        Container(
-                          child: Text('${_count}'),
-                        )
-                      ],
-                    ),
-
-                    Row(
-                        mainAxisAlignment: MainAxisAlignment.end,
-                        children:[
-                          Container(
-
-                            height: Adaptive.h(5),
-                            width: 30.w,
-                            alignment: Alignment.center,
-
-                            decoration: BoxDecoration(
-                              border: Border.all(width: 2, color: Colors.purple),
-                              borderRadius: BorderRadius.all(Radius.circular(10)),
-                            ),
-                            child: Text(divide(),style: TextStyle(fontSize: 18,fontWeight: FontWeight.w400)),
-                          )
-                        ]),
-                  ],
-                ),
-              ),
-              Container(
-                margin: EdgeInsets.all(20),
                 height:   Adaptive.h(11),
                 width:80.w,
                 decoration: BoxDecoration(
@@ -238,7 +69,6 @@ String divide() {
                         color: Colors.pink.shade100,
                         padding: EdgeInsets.only(right: 1),
                         shape: RoundedRectangleBorder(
-
                           borderRadius: BorderRadius.circular(10.0),
                           side: BorderSide(color: Colors.pink.shade100),
                         ),
@@ -250,14 +80,14 @@ String divide() {
                   ),
                   Container(
                     height: Adaptive.h(10),
-                    width: 5.w,
+                    width: 10.w,
                     alignment: Alignment.center,
                     margin: EdgeInsets.only(left: 10, top: 5),
                     child:
                     Text("${_count}", style: TextStyle(
                         fontSize: 30, fontWeight: FontWeight.w500),),),
                   SizedBox(
-                    width: 17.w,
+                    width: 12.w,
                   ),
                   Container(
                     height: Adaptive.h(10),
@@ -285,10 +115,11 @@ String divide() {
             ],
           ),
         ),
+    );
 
-      );
     }
     );
   }
 }
+
 
