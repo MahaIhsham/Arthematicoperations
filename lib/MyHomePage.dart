@@ -50,19 +50,17 @@ class _MyHomePageState extends State<MyHomePage> {
               OperationComponent(firstValue: 6,secondValue:_count,operation: "/",),
               SizedBox(height: 30.0,),
               Container(
-                height:   Adaptive.h(11),
-                width:80.w,
+                height:  80,
+                width:320,
                 decoration: BoxDecoration(
                   border: Border.all(width: 2, color: Colors.black),),
                 child:
               Row(
-
-
                 children: [
                   Container(
                     margin: EdgeInsets.only(left: 5, top: 5),
-                    height: Adaptive.h(10),
-                    width: 15.w,
+                    height: 50,
+                    width: 60,
                     alignment: Alignment.center,
                     child:
                     RaisedButton(
@@ -76,22 +74,22 @@ class _MyHomePageState extends State<MyHomePage> {
                         onPressed: _incrementCount),
                   ),
                   SizedBox(
-                    width: 20.w,
+                    width:60,
                   ),
                   Container(
-                    height: Adaptive.h(10),
-                    width: 10.w,
+                    height:50,
+                    width: 50,
                     alignment: Alignment.center,
                     margin: EdgeInsets.only(left: 10, top: 5),
                     child:
                     Text("${_count}", style: TextStyle(
                         fontSize: 30, fontWeight: FontWeight.w500),),),
                   SizedBox(
-                    width: 12.w,
+                    width: 55,
                   ),
                   Container(
-                    height: Adaptive.h(10),
-                    width: 15.w,
+                    height: 50,
+                    width: 60,
                     alignment: Alignment.center,
                     margin: EdgeInsets.only(left: 10, top: 5),
                     child:
@@ -121,5 +119,6 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 }
+
 
 
